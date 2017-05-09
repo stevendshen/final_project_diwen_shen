@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <font face="Impact" color="Gold"><h2 id="main-heading">Main Heading</h2></font>
+      <h3 id="title">Introduction</h3>
+      <h4 class="main-text-1">University City is served by over 19 SEPTA bus and surface trolley lines.</h3>
+      <h4 id="instructions">Instructions</h3>
+
+      <div id="checkbox-block">
+        <h4>Bus Frequency by Hour of Day</h4>
+        <form id="slider_form">
+          <label for="hour">Select Hour of Day</label>
+            <select name="hour" id="hour">
+              <option>12am</option>
+              <option>1am</option>
+              <option>2am</option>
+              <option>3am</option>
+              <option>4am</option>
+              <option>5am</option>
+              <option>6am</option>
+              <option>7am</option>
+              <option>8am</option>
+              <option>9am</option>
+              <option>10am</option>
+              <option>11am</option>
+              <option>12pm</option>
+              <option>1pm</option>
+              <option>2pm</option>
+              <option>3pm</option>
+              <option>4pm</option>
+              <option>5pm</option>
+              <option>6pm</option>
+              <option>7pm</option>
+              <option>8pm</option>
+              <option>9pm</option>
+              <option>10pm</option>
+              <option>11pm</option>
+            </select>
+        </form>
+        <br>
+        <div id='slider'></div>
+        <br>
+        <input type="checkbox" id="cbox-input1" value="first_checkbox">
+        <label id="checkbox-label1" for="cbox-input1">< 15 min  <span id="frequent-network-logo">Frequent Network</span></label>
+        <br>
+        <br>
+        <input type="checkbox" id="cbox-input2" value="second_checkbox">
+        <label id="checkbox-label2" for="cbox-input2">< 30 min  <span id="secondary-logo">Secondary</span></label>
+        <br>
+        <br>
+        <input type="checkbox" id="cbox-input3" value="third_checkbox">
+        <label id="checkbox-label3" for="cbox-input3">> 30 min  <span id="infrequent-logo">Infrequent</span></label>
+        <br>
+        <br>
+        <button id="button-checkbox">Update</button>
+        <br>
+        <br>
+        <button id="button-previous">Draw Default Map</button>
+        <button id="button-next">Clear All Features</button>
+        <br>
+        <br>
+      </div>
+      <br>
+      <p class="main-text-2"><span id="page-message">Page_Message</span></p>
+    </div>
+
+    <!-- Map -->
+    <div id="map" class="map"></div>
+
+    <!-- Javascript Imports -->
+    <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script src="js/final_project - Diwen Shen.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/jquery-2.2.0.js"></script>
+    <script src="js/jquery.csv.js"></script>
+    <script src="js/jquery-ui.js"></script>
+  </body>
+</html>

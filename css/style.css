@@ -1,0 +1,68 @@
+body {
+    overflow: hidden;
+    font-family: helvetica, arial, sans-serif;
+}
+
+.map {
+    position: absolute;
+    right: 0px;
+    left: 340px;
+    height: 100%;
+    top: 0;
+}
+
+.sidebar {
+    position: absolute;
+    left: 0px;
+    width: 300px;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: gray
+
+}
+
+div#checkbox-block {
+  background-color: #ddd;
+  padding: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+p.main-text-2 {
+  color: white;
+}
+
+span#frequent-network-logo {
+  background-color: DarkRed ;
+  font-size: 10px;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+span#secondary-logo {
+  background-color: DarkTurquoise;
+  font-size: 10px;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+span#infrequent-logo {
+  background-color: DarkSeaGreen ;
+  font-size: 10px;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+#slider {
+    height: 15px;
+    left: 10px;
+    width: 230px;
+
+}
