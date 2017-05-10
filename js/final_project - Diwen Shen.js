@@ -86,7 +86,7 @@ $(document).ready(function() {
 
 // Text Controls
 // Page number message Initialize
-$("#page-message").text("");
+$("#page-message").text("Click 'Draw Default Map' to refresh page");
 
 // Initialize text
 $("#main-heading").text("Exploring Service Frequencies in the SEPTA Bus Network"); // main heading
