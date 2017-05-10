@@ -12,3 +12,7 @@ Please see JavaScript and Python code comments for more detailed descriptions of
 
 
 Diwen Shen
+
+- Known Bugs:
+
+I encountered a strange bug (see Strange Bug.tiff for screenshot) where sometimes I cannot remove a layer from the map. After searching on the internet, I found that it might be an issue with my Google Chrome.

@@ -219,7 +219,8 @@ var draw_carto_subways = function(){
         onEachFeature: function(feature, layer) {
           layer.on('click', function() { console.log(feature.properties.lineabbr); });
         }
-      }).addTo(map);
+      });
+      layer_subway.addTo(map);
     })
     .error(function(errors) {
     });
@@ -229,11 +230,12 @@ var draw_carto_subways = function(){
 };
 
 var remove_subway_layer = function(){
-  if (subway_mapped === true){
+  $(document).on('DOMContentLoaded DOMNodeInserted', function(layer) {
     layer_subway.clearLayers();
-    subway_mapped = false;
-  }
+  });
 };
+
+
 
 
 // Takes frequency category (1,2,3,9) and hour of day (0-23), maps bus lines
@@ -273,8 +275,8 @@ var draw_freq = function(freq_cat, hour){
   // For some reason, feature groups cannot be overwritten. If overwritten, the original feature group cannot be cleared from the map.
   sqlClient.execute(sql).done(function(data) {
     $("#page-message").text("Mapping Complete");
-    if (freq_cat == 1){
-      feature_group_1 = L.geoJson(data, {
+    if (freq_cat == 3){
+      feature_group_3 = L.geoJson(data, {
         style: style_by_freq, // style
         onEachFeature: function(feature, layer) {
           layer.on('click', function() { $("#instructions").text("Line: " + feature.properties.lineabbr + " Frequency at " + hour + "HRS: " + find_frequency(feature.properties.lineabbr, hour)); });
@@ -285,8 +287,8 @@ var draw_freq = function(freq_cat, hour){
         onEachFeature: function(feature, layer) {
           layer.on('click', function() { $("#instructions").text("Line: " + feature.properties.lineabbr + " Frequency at " + hour + "HRS: " + find_frequency(feature.properties.lineabbr, hour)); });
         }}).addTo(map);
-    } else if (freq_cat == 3){
-      feature_group_3 = L.geoJson(data, {
+    } else if (freq_cat == 1){
+      feature_group_1 = L.geoJson(data, {
         style: style_by_freq, // style
         onEachFeature: function(feature, layer) {
           layer.on('click', function() { $("#instructions").text("Line: " + feature.properties.lineabbr + " Frequency at " + hour + "HRS: " + find_frequency(feature.properties.lineabbr, hour)); });
@@ -379,6 +381,7 @@ $(document).ready(function() {
     _.each(selectors, function(some_array){$(some_array).prop('disabled', false);});
     checkbox_values = _.map(selectors, function(some_array){return $(some_array).is(":checked");}); // get boolean for check-box
     console.log(checkbox_values);
+    clear_all_layers();
     map_according_to_checkbox();
   });
 
